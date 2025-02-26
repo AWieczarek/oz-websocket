@@ -17,20 +17,20 @@ class UserController {
     private final UserService userService;
 
     @MessageMapping("/user.addUser")
-    @SendTo("/user/topic")
+    @SendTo("/topic/public")
     public User addUser(@Payload User user) {
         userService.saveUser(user);
         return user;
     }
 
     @MessageMapping("/user.disconnectUser")
-    @SendTo("/user/topic")
+    @SendTo("/topic/public")
     public User disconnect(@Payload User user) {
         userService.disconnectUser(user);
         return user;
     }
 
-    @GetMapping("/user")
+    @GetMapping("/users")
     public ResponseEntity<List<User>> findConnectedUsers() {
         return ResponseEntity.ok(userService.getConnectedUsers());
     }
