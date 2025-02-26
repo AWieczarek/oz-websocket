@@ -1,6 +1,5 @@
 package pl.awieczarek.ozwebsocket.chatroom;
 
-import jdk.incubator.vector.ByteVector;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;
